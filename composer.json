@@ -1,0 +1,21 @@
+{
+    "name": "kntodev/yii2-simplemessage",
+    "description": "Simple Message Module for Yii2",
+    "type": "yii2-extension",
+    "keywords": ["yii2","extension"],
+    "license": "GPL-3.0+",
+    "authors": [
+        {
+            "name": "Knut Bayha",
+            "email": "test@msn.com"
+        }
+    ],
+    "require": {
+        "yiisoft/yii2": "~2.0.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "kntodev\\simplemessage\\": ""
+        }
+    }
+}

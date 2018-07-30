@@ -17,5 +17,11 @@
         "psr-4": {
             "kntodev\\simplemessage\\": ""
         }
-    }
+    },
+    "repositories":[
+        {
+            "type": "git",
+            "url": "https://github.com/kntodev/yii2-simplemessage"
+        }
+    ]
 }

@@ -4,7 +4,7 @@ use Yii;
 use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Url;
-use common\modules\simplemessage\MessagesAsset;
+use kntodev\simplemessage\MessagesAsset;
 use richardfan\widget\JSRegister;
 
 MessagesAsset::register($this);

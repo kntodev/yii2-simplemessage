@@ -4,7 +4,7 @@ use yii\helpers\Html;
 use yii\grid\GridView;
 use yii\widgets\Pjax;
 use yii\helpers\ArrayHelper;
-use common\modules\simplemessage\models\User;
+use kntodev\simplemessage\models\User;
 
 /* @var $this yii\web\View */
 /* @var $searchModel backend\modules\customer\models\CustomerSearch */

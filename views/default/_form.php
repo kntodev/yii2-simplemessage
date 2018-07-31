@@ -6,7 +6,7 @@ use yii\widgets\ActiveForm;
 use yii\helpers\ArrayHelper;
 use richardfan\widget\JSRegister;
 use kartik\select2\Select2;
-use common\modules\simplemessage\models\User;
+use kntodev\simplemessage\models\User;
 
 ?>
 

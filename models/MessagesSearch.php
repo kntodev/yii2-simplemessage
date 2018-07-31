@@ -1,6 +1,6 @@
 <?php
 
-namespace common\modules\simplemessage\models;
+namespace kntodev\simplemessage\models;
 
 use Yii;
 use yii\base\Model;

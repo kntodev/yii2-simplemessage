@@ -70,8 +70,10 @@ class Messages extends \yii\db\ActiveRecord
 
     public function setReaded($id) {
         $message = Messages::findOne($id);
-        $message->readed = 1;
-        $message->save() ;
+        if (Yii::$app->user->identity->id == $message->receiver) {
+            $message->readed = 1;
+            $message->save() ;
+        }
     }
 
     /**

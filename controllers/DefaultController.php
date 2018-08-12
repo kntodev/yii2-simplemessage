@@ -7,6 +7,8 @@ use yii\web\Controller;
 use yii\db\Query;
 use yii\data\Pagination;
 use yii\helpers\Url;
+use yii\filters\AccessControl;
+use yii\filters\VerbFilter;
 use kntodev\simplemessage\Message ;
 use kntodev\simplemessage\models\Messages;
 use kntodev\simplemessage\models\MessagesSearch;
@@ -19,6 +21,34 @@ class DefaultController extends Controller
 {
 
     public $layout = "@app/views/layouts/main";
+
+    public function behaviors()
+    {
+        return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'only' => ['delete', 'create'], 
+                'rules' => [
+                    [
+                        'allow' => false,
+                        'verbs' => ['POST'],
+                    ],
+                    [
+                        'allow' => true,
+                        'actions' => ['delete', 'create'],
+                        'roles' => ['messageUser'],
+                    ],
+                ],
+            ],
+            'verbs' => [
+                'class' => VerbFilter::className(),
+                'actions' => [
+                    'delete' => ['post'],
+                ],
+            ],
+        ];
+    }
+
 
     /**
      * Renders the index view for the module

@@ -4,6 +4,7 @@ use Yii;
 use yii\helpers\Html;
 use yii\helpers\ArrayHelper;
 use yii\helpers\Url;
+use yii\filters\AccessControl;
 use kntodev\simplemessage\MessagesAsset;
 use richardfan\widget\JSRegister;
 
@@ -17,7 +18,11 @@ MessagesAsset::register($this);
 	</a>
 	<div class="dropdown-menu" style="width: 600px;">
 		<div class="header">
-			<?= Html::a(Yii::t('modules/messages', 'New Message'), '/messages/default/create', ['class' => 'read-all pull-right']) ?>
+			<?php
+			if (Yii::$app->user->can('messageUser')) {
+				echo Html::a(Yii::t('modules/messages', 'New Message'),'/messages/default/create', ['class' => 'read-all pull-right']) ;
+			}
+			?>
 			<?= Yii::t('modules/messages', 'Messages') ?>
 		</div>
 		<div id="msgContainer" class="messages-list"></div>
